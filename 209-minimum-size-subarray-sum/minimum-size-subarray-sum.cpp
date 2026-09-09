@@ -6,9 +6,8 @@ public:
         int minLen = INT_MAX;
 
         for (int right = 0; right < nums.size(); right++) {
-            sum += nums[right];              // expand window
-
-            while (sum >= target) {          // shrink while valid
+            sum += nums[right];              
+            while (sum >= target) {         
                 minLen = min(minLen, right - left + 1);
                 sum -= nums[left];
                 left++;
